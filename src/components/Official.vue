@@ -18,12 +18,12 @@
     <el-menu-item index="5">加入我们</el-menu-item>
     <!-- 上边菜单栏右侧 -->
     <div class="flex-grow" />
-    <el-menu-item index="6">登录</el-menu-item>
-    <el-botton class="enbotton">CN | EN</el-botton>
+    <el-menu-item index="6" >登录</el-menu-item>
+    <el-botton class="enbotton" >CN | EN</el-botton>
 
       <!-- 员工入口 -->
 
-
+      
       <!-- 中英文切换 -->
 
 
