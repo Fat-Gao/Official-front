@@ -2,46 +2,58 @@
   <!-- 背景图片 -->
   <div class="bac-all"></div>
   <!-- 上边菜单栏左侧 -->
-  <el-menu class="el-menu-demo" mode="horizontal" :default-active="activeIndex" @select="handleSelect"
-    style="z-index: 1;">
+  <el-menu class="el-menu-demo" mode="horizontal" @select="handleSelect" style="z-index: 1;">
     <!-- 图标 -->
     <el-image :src="require('@/assets/logo.png')"></el-image>
     <!-- 左侧菜单 -->
-    <el-menu-item index="2">关于我们</el-menu-item>
+    <el-menu-item index="2">{{ $t("home.aboutUs") }}</el-menu-item>
     <el-sub-menu index="3" :popper-append-to-body="false">
-      <template #title>产品与服务</template>
-      <el-menu-item index="3-1" class="el-menu-list1">产品1</el-menu-item>
-      <el-menu-item index="3-2" class="el-menu-list2">产品2</el-menu-item>
-      <el-menu-item index="3-3" class="el-menu-list3">产品3</el-menu-item>
+      <template #title>{{ $t("home.service") }}</template>
+      <el-menu-item index="3-1" class="el-menu-list1">{{ $t("home.product.product1") }}</el-menu-item>
+      <el-menu-item index="3-2" class="el-menu-list2">{{ $t("home.product.product2") }}</el-menu-item>
+      <el-menu-item index="3-3" class="el-menu-list3">{{ $t("home.product.product3") }}</el-menu-item>
     </el-sub-menu>
-    <el-menu-item index="4">ESG</el-menu-item>
-    <el-menu-item index="5">加入我们</el-menu-item>
+    <el-menu-item index="4">{{ $t("home.esg") }}</el-menu-item>
+    <el-menu-item index="5">{{ $t("home.addUs") }}</el-menu-item>
     <!-- 上边菜单栏右侧 -->
     <div class="flex-grow" />
-    <el-menu-item index="6" >登录</el-menu-item>
-    <el-botton class="enbotton" >CN | EN</el-botton>
-
-      <!-- 员工入口 -->
-
-      
-      <!-- 中英文切换 -->
+    <!-- 员工入口 -->
+    <el-menu-item index="6">{{ $t("home.login") }}</el-menu-item>
+    <!-- 中英文切换 -->
+    <el-button class="enbotton" mb-4 @click.native="switchLanguage">CN | EN</el-button>
 
 
   </el-menu>
 </template>
 
 <script>
+import { inject } from 'vue';
+import { useI18n } from "vue-i18n"
 
 export default {
   name: 'Official',
-  props: {
-    msg: String
-  },
-  methods: {
-    handleSelect(key, keyPath) {
+  setup() {
+
+    let { t, locale } = useI18n();
+    const language = inject('language')
+
+    function handleSelect(key, keyPath) {
       console.log(key, keyPath);
     }
-  }
+    function switchLanguage() {
+      language.value = language.value === 'zh-cn' ? 'en' : 'zh-cn'
+      locale.value = language.value
+    }
+
+    return {
+      handleSelect,
+      switchLanguage,
+      language,
+      locale,
+      t
+    }
+  },
+
 }
 </script>
 
@@ -65,9 +77,11 @@ export default {
   margin-right: 3%;
   height: 35px;
 }
-.el-sub-menu.el-menu-item{
+
+.el-sub-menu.el-menu-item {
   opacity: 0.7;
 }
+
 .el-menu-demo {
   opacity: 0.6;
   width: 101;
@@ -76,7 +90,7 @@ export default {
   font-weight: bold;
 }
 
-.el-menu-list1{
+.el-menu-list1 {
   display: flex;
   text-align: center;
   align-items: center;
@@ -86,7 +100,8 @@ export default {
   font-size: 12px;
 
 }
-.el-menu-list2{
+
+.el-menu-list2 {
   display: flex;
   text-align: center;
   align-items: center;
@@ -95,7 +110,8 @@ export default {
   font-weight: bold;
   font-size: 12px;
 }
-.el-menu-list3{
+
+.el-menu-list3 {
   display: flex;
   text-align: center;
   align-items: center;
@@ -104,17 +120,22 @@ export default {
   font-weight: bold;
   font-size: 12px;
 }
+
 .flex-grow {
   flex-grow: 1;
 }
 
-.enbotton{
-  margin-top: 0.9%;
-  margin-bottom: auto;
+.enbotton {
+  opacity: 0.8;
+  margin-top: 0.6%;
+  margin-bottom: 0.6%;
   margin-left: 0.6%;
   margin-right: 0.6%;
   font-size: 15px;
   font-family: '阿里巴巴普惠体';
   font-weight: bold;
+  color: black;
+  border-style: none;
+  background: transparent
 }
 </style>
