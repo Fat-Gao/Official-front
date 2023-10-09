@@ -1,18 +1,26 @@
 <template>
   <div style="width: 100%">
-    <Official />
+    <div class="bac-all">
+      <Official />
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
 import Official from './components/Official.vue'
+import AboutUs from './components/AboutUs.vue'
+import AddUs from './components/AddUs.vue'
+import Login from './components/Login.vue'
+import Products from './components/Products.vue'
+import ESG from './components/ESG.vue'
 import { provide, ref } from 'vue'
 import { useI18n } from "vue-i18n"
 
 export default {
   name: 'App',
   components: {
-    Official
+    Official,AboutUs,AddUs,Login,Products,ESG
   },
   setup() {
     const language = ref('zh-cn')
@@ -47,5 +55,15 @@ body {
   margin: 0;
   padding: 0;
   border: 0
+}
+.bac-all {
+  width: 100%;
+  height: 100%;
+  background-image: url(./assets/background.jpg);
+  background-size: cover;
+  position: absolute;
+  z-index: -1;
+  /* background-repeat: no-repeat; */
+  opacity: 1;
 }
 </style>
