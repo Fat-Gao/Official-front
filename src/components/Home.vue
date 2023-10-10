@@ -1,5 +1,5 @@
 <template>
-    <div class="bac-esg">
+    <div class="bac-home">
       <Official />
       <div>home</div>
     </div>
@@ -18,9 +18,10 @@ export default {
 </script>
   
 <style>
-.bac-esg {
+.bac-home {
     width: 100%;
     height: 100%;
+    background-image: url(../assets/background.jpg);
     background-size: cover;
     position: absolute;
     z-index: -1;

@@ -1,12 +1,16 @@
 <template>
-    <div>AddUs</div>
+    <div>
+        <Official />
+        <div>AddUs</div>
+    </div>
 </template>
   
 <script>
+import Official from './Official.vue'
 export default {
     name: 'AddUs',
     components: {
-
+        Official,
     },
     setup() { }
 }

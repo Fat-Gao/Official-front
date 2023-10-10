@@ -53,14 +53,4 @@ body {
   padding: 0;
   border: 0
 }
-.bac-all {
-  width: 100%;
-  height: 100%;
-  background-image: url(./assets/background.jpg);
-  background-size: cover;
-  position: absolute;
-  z-index: -1;
-  /* background-repeat: no-repeat; */
-  opacity: 1;
-}
 </style>

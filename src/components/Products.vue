@@ -1,12 +1,16 @@
 <template>
-    <div>Products</div>
+    <div>
+        <Official />
+        <div>Products</div>
+    </div>
 </template>
   
 <script>
+import Official from './Official.vue'
 export default {
     name: 'Products',
     components: {
-
+        Official
     },
     setup() {
 
