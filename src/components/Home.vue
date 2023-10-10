@@ -1,7 +1,7 @@
 <template>
     <div class="bac-esg">
       <Official />
-      <div>ESG</div>
+      <div>home</div>
     </div>
 </template>
   
@@ -9,7 +9,7 @@
 import Official from './Official.vue'
 
 export default {
-    name: 'ESG',
+    name: 'Home',
     components: {
         Official
     },
@@ -21,7 +21,6 @@ export default {
 .bac-esg {
     width: 100%;
     height: 100%;
-    background-image: url(../assets/back.png);
     background-size: cover;
     position: absolute;
     z-index: -1;

@@ -1,9 +1,6 @@
 <template>
   <div style="width: 100%">
-    <div class="bac-all">
-      <Official />
-      <router-view></router-view>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 

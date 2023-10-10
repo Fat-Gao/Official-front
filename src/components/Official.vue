@@ -38,21 +38,36 @@ export default {
 
     function handleSelect(key, keyPath) {
       console.log(key);
-      if(key==2)
+      if(key=="2")
       {
-        router.push({path:"./ESG"})
+        router.push({path:"./aboutus"})
       }
-      else if(key==3)
+      else if(key=="3-1")
       {
-        router.push({path:"./ESG"})
+        router.push({path:"./products"})
       }
-      else if(key==4)
+      else if(key=="3-2")
       {
-        router.push({path:"./ESG"})
+        router.push({path:"./products"})
       }
-      else if(key==5)
+      else if(key=="3-3")
       {
-        router.push({path:"./ESG"})
+        router.push({path:"./products"})
+      }
+      // else if(key=="3-1"||"3-2"||"3-3")
+      // {
+      //   router.push({path:"./products"})
+      // }
+      else if(key=="4")
+      {
+        router.push({path:"./esg"})
+      }
+      else if(key=="5")
+      {
+        router.push({path:"./addus"})
+      }
+      else{
+        router.push({path:"./login"})
       }
     }
     function switchLanguage() {

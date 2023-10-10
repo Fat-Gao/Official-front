@@ -4,8 +4,17 @@ import AboutUs from '../components/AboutUs';
 import ESG from '../components/ESG';
 import Products from '../components/Products';
 import Login from '../components/Login';
+import Home from '../components/Home';
 
 const routes =[
+    {
+        path: "/",
+        redirect:'/home',
+    },
+    {
+        path:'/home',
+        component: Home
+    },
     {
         path:'/addus',
         component: AddUs
