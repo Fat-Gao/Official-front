@@ -38,7 +38,19 @@ export default {
 
     function handleSelect(key, keyPath) {
       console.log(key);
-      if(key==4)
+      if(key==2)
+      {
+        router.push({path:"./ESG"})
+      }
+      else if(key==3)
+      {
+        router.push({path:"./ESG"})
+      }
+      else if(key==4)
+      {
+        router.push({path:"./ESG"})
+      }
+      else if(key==5)
       {
         router.push({path:"./ESG"})
       }
