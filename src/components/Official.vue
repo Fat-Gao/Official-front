@@ -2,7 +2,7 @@
   <!-- 上边菜单栏左侧 -->
   <el-menu class="el-menu-demo" mode="horizontal" @select="handleSelect" style="z-index: 1;" :ellipsis="false">
     <!-- 图标 -->
-    <el-image :src="require('@/assets/logo.png')"></el-image>
+    <el-image :src="require('@/assets/logo.png')" @click="turnHome" style="cursor:pointer"></el-image>
     <!-- 左侧菜单 -->
     <el-menu-item index="2">{{ $t("home.aboutUs") }}</el-menu-item>
     <el-sub-menu index="3" :teleported="false">
@@ -74,12 +74,16 @@ export default {
       language.value = language.value === 'zh-cn' ? 'en' : 'zh-cn'
       locale.value = language.value
     }
+    function turnHome() {
+      router.push({path:"./home"})
+    }
 
     return {
       handleSelect,
       switchLanguage,
       language,
       locale,
+      turnHome,
       t
     }
   },
