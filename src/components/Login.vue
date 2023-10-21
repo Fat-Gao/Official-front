@@ -2,26 +2,34 @@
     <div class="bac-login">
         <Official />
         <div class="title">
-            <div class="fontStyle">因湃电池科技有限公司统一登录门户</div>
-            <el-button class="bigButton" @click.native="switchsso">登录</el-button>
+            <div class="fontStyle">{{ $t("login.title") }}</div>
+            <el-button class="bigButton" @click.native="switchsso">{{ $t("login.botton") }}</el-button>
         </div>
     </div>
 </template>
 
 <script>
 import Official from './Official.vue'
+import { useI18n } from "vue-i18n"
+
 export default {
     name: 'Login',
     components: {
         Official,
     },
     setup() {
+        let { t, locale } = useI18n();
+
+
+
         function switchsso() {
             window.location.href = "http://10.61.78.23:30008"
         }
 
         return {
-            switchsso
+            switchsso,
+            t,
+            locale
         }
     }
 }

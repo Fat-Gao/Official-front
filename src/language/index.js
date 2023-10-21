@@ -14,6 +14,10 @@ const messages = {
             addUs:"Add Us",
             login:"Login"
         },
+        login:{
+            title:'Inpow Battery Technology Co., Ltd. Unified Login Portal',
+            botton:'Login'
+        }
     },
     'zh-cn': {
         home: {
@@ -28,6 +32,10 @@ const messages = {
             addUs:"加入我们",
             login:"登录"
 
+        },
+        login:{
+            title:'因湃电池科技有限公司统一登录门户',
+            botton:'登录'
         }
     }
 }
